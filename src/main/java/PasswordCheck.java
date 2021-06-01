@@ -12,6 +12,9 @@ public class PasswordCheck {
             list[i] = str.charAt(i);
         }
         int duplicates = 0;
+        int counting = 0;
+
+
         String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[()#$?!%/@]).+$";
         Pattern p = Pattern.compile(regex);
 
@@ -23,11 +26,24 @@ public class PasswordCheck {
         if (!m.matches()) {
             return false;
         }
+/*
+        //Counting
+        for (int i = 0; i < num; i++) {
+            for (int j = i + 1; j < num; j++) {
+                if (list[i] >= 48 && list[i] <= 57) {
+                    if (list[i] + 1 == list[j]) {
+                        counting++;
+                        if (counting > 2) return false;
+                    } else {
+                        counting = 0;
+                    }
+                }
+            }
+        }
+*/
 
         //Recurring
         for (int i = 0; i < num; i++) {
-
-
             for (int j = i + 1; j < num; j++) {
                 if (list[i] >= 48 && list[i] <= 57) {
                     if (list[i] == list[j]) {
@@ -38,10 +54,7 @@ public class PasswordCheck {
                     }
                 }
             }
-
-
         }
-
 
         return true;
     }

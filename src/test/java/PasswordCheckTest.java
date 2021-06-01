@@ -80,5 +80,19 @@ public class PasswordCheckTest  {
         PasswordCheck pw = new PasswordCheck();
         assertTrue(pw.checkPassword("Password111@"));
     }
+/*
+    @Test
+    @DisplayName("Counting Numbers")
+    public void testCountingNumbers(){
+        PasswordCheck pw = new PasswordCheck();
+        assertFalse(pw.checkPassword("Password123@"));
+    }
+    @Test
+    @DisplayName("Counting2")
+    public void testCountingNumbers2(){
+        PasswordCheck pw = new PasswordCheck();
+        assertTrue(pw.checkPassword("Password111@"));
+    }
 
+ */
 }
